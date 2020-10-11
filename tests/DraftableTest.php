@@ -221,4 +221,19 @@ class DraftableTest extends TestCase
         $this->assertTrue($model->isDraft());
         $this->assertTrue($model->isClean());
     }
+
+    /** @test */
+    public function it_does_not_change_published_at_timestamp_when_publishing_model_an_already_published()
+    {
+        $model = TestModel::factory()->make([
+            'published_at' => $publishedAt = Carbon::now(),
+        ]);
+
+        $model->setPublished(true);
+
+        $this->assertSame(
+            $publishedAt->toDateString(),
+            $model->published_at->toDateString()
+        );
+    }
 }
