@@ -2,13 +2,11 @@
 
 namespace Kace\Draftable\Tests;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Kace\Draftable\Draftable;
 
 class TestModel extends Model
 {
-    use HasFactory;
     use Draftable;
 
     /**
@@ -28,14 +26,4 @@ class TestModel extends Model
     protected $dates = [
         'published_at',
     ];
-
-    /**
-     * Create a new factory instance for the model.
-     *
-     * @return \Illuminate\Database\Eloquent\Factories\Factory
-     */
-    protected static function newFactory()
-    {
-        return Database\Factories\TestModelFactory::new();
-    }
 }

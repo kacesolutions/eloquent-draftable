@@ -12,12 +12,12 @@ class DraftableTest extends TestCase
     /** @test */
     public function it_can_determine_if_a_model_is_draft(): void
     {
-        $draft = TestModel::factory()->make();
+        $draft = factory(TestModel::class)->make();
 
         $this->assertTrue($draft->isDraft());
 
-        $scheduled = TestModel::factory()
-            ->scheduled()
+        $scheduled = factory(TestModel::class)
+            ->state('scheduled')
             ->make();
 
         $this->assertTrue($scheduled->isDraft());
@@ -26,14 +26,14 @@ class DraftableTest extends TestCase
     /** @test */
     public function it_can_determine_if_a_model_is_published(): void
     {
-        $published = TestModel::factory()
-            ->published()
+        $published = factory(TestModel::class)
+            ->state('published')
             ->make();
 
         $this->assertTrue($published->isPublished());
 
-        $scheduled = TestModel::factory()
-            ->scheduled()
+        $scheduled = factory(TestModel::class)
+            ->state('scheduled')
             ->make();
 
         $this->assertFalse($scheduled->isPublished());
@@ -46,10 +46,10 @@ class DraftableTest extends TestCase
     /** @test */
     public function it_can_retrieves_published_models_by_default()
     {
-        TestModel::factory()->create();
+        factory(TestModel::class)->create();
 
-        TestModel::factory()
-            ->published()
+        factory(TestModel::class)
+            ->state('published')
             ->create();
 
         $models = TestModel::all();
@@ -65,10 +65,10 @@ class DraftableTest extends TestCase
     /** @test */
     public function it_can_retrives_models_with_drafts()
     {
-        TestModel::factory()->create();
+        factory(TestModel::class)->create();
 
-        TestModel::factory()
-            ->published()
+        factory(TestModel::class)
+            ->state('published')
             ->create();
 
         $models = TestModel::withDrafts()->get();
@@ -83,10 +83,10 @@ class DraftableTest extends TestCase
     /** @test */
     public function it_can_retrives_draft_models_only()
     {
-        TestModel::factory()->create();
+        factory(TestModel::class)->create();
 
-        TestModel::factory()
-            ->published()
+        factory(TestModel::class)
+            ->state('published')
             ->create();
 
         $models = TestModel::onlyDrafts()->get();
@@ -102,7 +102,7 @@ class DraftableTest extends TestCase
     /** @test */
     public function it_can_mark_a_model_as_published()
     {
-        $model = TestModel::factory()->make();
+        $model = factory(TestModel::class)->make();
 
         $this->assertFalse($model->isPublished());
 
@@ -114,7 +114,7 @@ class DraftableTest extends TestCase
     /** @test */
     public function it_can_mark_a_model_as_published_without_saving()
     {
-        $model = TestModel::factory()->make();
+        $model = factory(TestModel::class)->make();
 
         $this->assertFalse($model->isPublished());
 
@@ -128,8 +128,8 @@ class DraftableTest extends TestCase
     /** @test */
     public function it_can_mark_a_model_as_draft()
     {
-        $model = TestModel::factory()
-            ->published()
+        $model = factory(TestModel::class)
+            ->state('published')
             ->make();
 
         $this->assertFalse($model->isDraft());
@@ -142,8 +142,8 @@ class DraftableTest extends TestCase
     /** @test */
     public function it_can_mark_a_model_as_draft_without_saving()
     {
-        $model = TestModel::factory()
-            ->published()
+        $model = factory(TestModel::class)
+            ->state('published')
             ->make();
 
         $this->assertFalse($model->isDraft());
@@ -158,7 +158,7 @@ class DraftableTest extends TestCase
     /** @test */
     public function it_can_publish_or_draft_a_model_based_on_a_boolean_value()
     {
-        $model = TestModel::factory()
+        $model = factory(TestModel::class)
             ->make();
 
         $this->assertTrue($model->isDraft());
@@ -175,7 +175,7 @@ class DraftableTest extends TestCase
     /** @test */
     public function it_can_schedule_a_model_to_be_published()
     {
-        $model = TestModel::factory()->make();
+        $model = factory(TestModel::class)->make();
 
         $model->publishAt($scheduleAt = Carbon::now()->addDays(7));
 
@@ -189,7 +189,7 @@ class DraftableTest extends TestCase
     /** @test */
     public function it_can_schedule_a_model_to_be_published_without_saving()
     {
-        $model = TestModel::factory()->make();
+        $model = factory(TestModel::class)->make();
 
         $model->setPublishedAt($scheduleAt = Carbon::now()->addDays(7));
 
@@ -205,8 +205,8 @@ class DraftableTest extends TestCase
     /** @test */
     public function it_can_accept_a_null_publish_date_to_indefinitely_draft_a_model()
     {
-        $model = TestModel::factory()
-            ->published()
+        $model = factory(TestModel::class)
+            ->state('published')
             ->create();
 
         $model->setPublishedAt(null);
@@ -225,7 +225,7 @@ class DraftableTest extends TestCase
     /** @test */
     public function it_does_not_change_published_at_timestamp_when_publishing_model_an_already_published()
     {
-        $model = TestModel::factory()->make([
+        $model = factory(TestModel::class)->make([
             'published_at' => $publishedAt = Carbon::now(),
         ]);
 
