@@ -15,6 +15,9 @@ jobs:
         include:
           - laravel: 8.*
             testbench: 6.*
+        exclude:
+          - laravel: 8.*
+            php: 7.2
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }} - ${{ matrix.os }}
 
