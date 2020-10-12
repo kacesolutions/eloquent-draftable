@@ -1,6 +1,15 @@
 <p>
     <a href="https://github.com/kacesolutions/eloquent-draftable/actions">
-        <img src="https://github.com/kacesolutions/eloquent-draftable/workflows/tests/badge.svg" alt="Build Status">
+        <img src="https://img.shields.io/github/workflow/status/kacesolutions/eloquent-draftable/tests" alt="Build Status">
+    </a>
+    <a href="https://packagist.org/packages/kace/eloquent-draftable">
+        <img src="https://img.shields.io/packagist/dt/kace/eloquent-draftable" alt="Total Downloads">
+    </a>
+    <a href="https://packagist.org/packages/kace/eloquent-draftable">
+        <img src="https://img.shields.io/packagist/v/kace/eloquent-draftable" alt="Stable Version">
+    </a>
+    <a href="https://packagist.org/packages/kace/eloquent-draftable">
+        <img src="https://img.shields.io/packagist/l/kace/eloquent-draftable" alt="License">
     </a>
 </p>
 
