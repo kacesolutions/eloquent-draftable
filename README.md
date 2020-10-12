@@ -1,15 +1,10 @@
-<h2>Eloquent Draftable</p>
-<p>
-    <a href="https://github.com/kacesolutions/eloquent-draftable/actions">
-        <img src="https://img.shields.io/github/workflow/status/kacesolutions/eloquent-draftable/tests" alt="Build Status">
-    </a>
-    <a href="https://packagist.org/packages/kace/eloquent-draftable">
-        <img src="https://img.shields.io/packagist/v/kace/eloquent-draftable" alt="Stable Version">
-    </a>
-    <a href="https://packagist.org/packages/kace/eloquent-draftable">
-        <img src="https://img.shields.io/packagist/l/kace/eloquent-draftable" alt="License">
-    </a>
-</p>
+# Eloquent Draftable
 
-## Introduction
+![Github Workflow Status](https://img.shields.io/github/workflow/status/kacesolutions/eloquent-draftable/tests)
+![Packagist Version](https://img.shields.io/packagist/v/kace/eloquent-draftable)
+![License](https://img.shields.io/packagist/l/kace/eloquent-draftable)
+
 Add draftable functionality to your eloquent models.
+
+## License
+This package is licensed under the MIT license.
