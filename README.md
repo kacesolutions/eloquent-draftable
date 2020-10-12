@@ -1,27 +1,27 @@
 # Eloquent Draftable
 
-![Github Workflow Status](https://img.shields.io/github/workflow/status/kacesolutions/eloquent-draftable/tests)
-![Packagist Version](https://img.shields.io/packagist/v/kace/eloquent-draftable)
-![Packagist License](https://img.shields.io/packagist/l/kace/eloquent-draftable)
+- [Introduction](#introduction)
+- [Installation](#installation)
 
 ## Introduction
 
-Add draftable functionality to your eloquent models.
+Eloquent Draftable provides additional draftable features for your model elements. This package gives you the feature to publish a model or to publish on a scheduled basis or to publish on a certain date.
 
-- [Documentation](#documentation)
-    - [Installation](#installation)
-    - [Setup](#setup)
-    - [Usage](#usage)
-- [License](#license)
+## Installation 
 
-## Documentation
-
-### Installation
-
-To get started, install Eloquent Draftable using Composer:
-
-```bash
+You may install Eloquent Draftable via Composer:
+```bash 
 composer require kace/eloquent-draftable
+```
+
+Next, add the nullable timestamp column `publisheh_at` to the model table database:
+```php
+$table->timestamp('published_at')->nullable();
+```
+
+Finally, you should run your database migrations. Eloquent Draftable will add a `published_at` column in which to publication date:
+```bash
+php artisan migrate
 ```
 
 ## License
