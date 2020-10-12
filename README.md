@@ -1,4 +1,4 @@
-<p align="center">
+<p>
     <a href="https://github.com/kacesolutions/eloquent-draftable/actions">
         <img src="https://github.com/kacesolutions/eloquent-draftable/workflows/tests/badge.svg" alt="Build Status">
     </a>
