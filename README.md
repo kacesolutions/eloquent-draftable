@@ -4,7 +4,7 @@
         <img src="https://img.shields.io/github/workflow/status/kacesolutions/eloquent-draftable/tests" alt="Build Status">
     </a>
     <a href="https://packagist.org/packages/kace/eloquent-draftable">
-        <img src="https://img.shields.io/packagist/v/kcdev/eloquent-draftable" alt="Stable Version">
+        <img src="https://img.shields.io/packagist/v/kace/eloquent-draftable" alt="Stable Version">
     </a>
     <a href="https://packagist.org/packages/kace/eloquent-draftable">
         <img src="https://img.shields.io/packagist/l/kace/eloquent-draftable" alt="License">
