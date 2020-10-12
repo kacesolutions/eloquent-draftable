@@ -1,3 +1,4 @@
+<h2>Eloquent Draftable</p>
 <p>
     <a href="https://github.com/kacesolutions/eloquent-draftable/actions">
         <img src="https://img.shields.io/github/workflow/status/kacesolutions/eloquent-draftable/tests" alt="Build Status">
