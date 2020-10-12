@@ -1,6 +1,6 @@
 <?php
 
-namespace Kace\Draftable;
+namespace Kace\EloquentDraftable;
 
 use Carbon\Carbon;
 use DateTimeInterface;

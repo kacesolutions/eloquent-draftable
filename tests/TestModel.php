@@ -1,9 +1,9 @@
 <?php
 
-namespace Kace\Draftable\Tests;
+namespace Kace\EloquentDraftable\Tests;
 
 use Illuminate\Database\Eloquent\Model;
-use Kace\Draftable\Draftable;
+use Kace\EloquentDraftable\Draftable;
 
 class TestModel extends Model
 {

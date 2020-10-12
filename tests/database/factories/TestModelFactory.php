@@ -3,7 +3,7 @@
 use Carbon\Carbon;
 use Faker\Generator as Faker;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Kace\Draftable\Tests\TestModel;
+use Kace\EloquentDraftable\Tests\TestModel;
 
 /**
  * Define the model's default state.

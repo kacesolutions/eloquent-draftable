@@ -1,6 +1,6 @@
 <?php
 
-namespace Kace\Draftable\Tests;
+namespace Kace\EloquentDraftable\Tests;
 
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Kace\Draftable\Tests;
+namespace Kace\EloquentDraftable\Tests;
 
 use Orchestra\Testbench\TestCase as BaseTest;
 

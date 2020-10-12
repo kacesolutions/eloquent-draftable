@@ -18,12 +18,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Kace\\Draftable\\": "src/"
+            "Kace\\EloquentDraftable\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Kace\\Draftable\\Tests\\": "tests/"
+            "Kace\\EloquentDraftable\\Tests\\": "tests/"
         }
     },
     "scripts": {
