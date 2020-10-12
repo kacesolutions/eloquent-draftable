@@ -16,13 +16,16 @@ jobs:
     name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }}
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Chekcout code
+      uses: actions/checkout@v2
 
-    - uses: shivammathur/setup-php@v2
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ matrix.php }}
 
-    - uses: actions/cache@v2
+    - name: Cache dependencies
+      uses: actions/cache@v2
       with:
         path: ~/.composer/cache/files
         key: php-${{ matrix.php }}-composer-${{ hashFiles('composer.json') }}
@@ -31,4 +34,4 @@ jobs:
       run: composer install --prefer-dist --no-progress --no-suggest
 
     - name: Execute tests
-      run: vendor/bin/phpunit --verbose
+      run: vendor/bin/phpunit
