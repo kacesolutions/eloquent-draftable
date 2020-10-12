@@ -8,8 +8,11 @@ jobs:
   phpunit:
 
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: [7.3, 7.4]
 
-    name: PHPUnit
+    name: PHP ${{ matrix.php }}
 
     steps:
     - name: Chekcout code
@@ -18,7 +21,7 @@ jobs:
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '7.4'
+        php-version: {{ matrix.php }}
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
